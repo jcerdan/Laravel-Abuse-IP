@@ -31,3 +31,4 @@ jobs:
           git push origin HEAD:${{ github.ref }}
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true
