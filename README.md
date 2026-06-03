@@ -54,7 +54,7 @@ Add `ABUSEIP_STORAGE_COMPRESS` `true/false` to enable or disable `ip2long()`
 
 ### Usage
 
-Use the `middleware::AbuseIp::class` where ever required like in form page or post urls.Or you can add the middleware to your code, For Laravel 10 and below add the middleware `Http/Kernel.php`, For Laravel 11 add to `bootstrap/app/php`
+Use the `middleware::AbuseIp::class` where ever required like in form page or post urls. You can add the middleware globally in `bootstrap/app.php`:
 
 ```php
 //Laravel 10 and below
@@ -81,7 +81,7 @@ protected $middleware = [
 
 ```
 
-If you don't want to put it in your route middleware you can make a `aliasMiddleware()` and use the alias in your routes file to disable spam ip visits.
+If you don't want to apply it globally, you can use the alias in your routes file to selectively block spam IP visits. The `abuse_ip` alias is registered automatically by the service provider.
 
 ```php
 //Laravel 10 and below
